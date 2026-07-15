@@ -18,7 +18,7 @@ const Navbar = () => {
   }, []);
   return (
     <nav
-      className={`sticky top-0 z-50 border-b-2 ${isScrolled ? 'backdrop-blur-lg' : ''}`}
+      className={`sticky top-0 z-50 border-b ${isScrolled ? 'backdrop-blur-lg' : ''}`}
     >
       <Container className='py-0 lg:py-0 h-20 flex items-center justify-between'>
         <Logo />

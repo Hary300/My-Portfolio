@@ -1,4 +1,4 @@
-import { navLinks } from '@/data/NavLinks';
+import { navLinks } from '@/data/navLinks';
 import Link from 'next/link';
 
 const NavLinks = ({ onClick }: { onClick?: () => void }) => {
