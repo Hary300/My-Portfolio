@@ -8,9 +8,8 @@ import {
 } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
-import { navLinks } from '@/data/NavLinks';
-import Link from 'next/link';
 import { useState } from 'react';
+import NavLinks from './NavLinks';
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
@@ -34,17 +33,7 @@ const MobileMenu = () => {
         </SheetHeader>
         <div className='grid flex-1 auto-rows-min gap-6 px-4'>
           <ul className='flex flex-col gap-4'>
-            {navLinks.map((link) => (
-              <li key={link.id}>
-                <Link
-                  href={link.path}
-                  className='text-neutral-25 hover:text-primary-200 hover:underline'
-                  onClick={() => setOpen(false)}
-                >
-                  {link.name}
-                </Link>
-              </li>
-            ))}
+            <NavLinks onClick={() => setOpen(false)} />
           </ul>
         </div>
       </SheetContent>

@@ -199,6 +199,9 @@
   --color-primary-300: #3a6601;
   --color-primary-400: #1d3300;
 
+  /* Secondary */
+  --color-secondary-200: #f3993f;
+
   /* Neutral */
   --color-neutral-25: #fdfdfd;
   --color-neutral-50: #fafafa;

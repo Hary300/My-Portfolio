@@ -2,40 +2,28 @@
 import Container from './Container';
 import MobileMenu from '../common/MobileMenu';
 import { useEffect, useState } from 'react';
-import { navLinks } from '@/data/NavLinks';
-import Link from 'next/link';
+import Logo from '@/components/common/Logo';
+import NavLinks from '../common/NavLinks';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
-      if (window.screenY > 10) setIsScrolled(true);
+      setIsScrolled(window.scrollY > 10);
     };
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, [isScrolled]);
+  }, []);
   return (
-    <nav className={`sticky top-0 ${isScrolled ? 'backdrop-blur-lg' : ''}`}>
+    <nav
+      className={`sticky top-0 z-50 border-b-2 ${isScrolled ? 'backdrop-blur-lg' : ''}`}
+    >
       <Container className='py-0 lg:py-0 h-20 flex items-center justify-between'>
-        <div className='flex items-center gap-2.25'>
-          <div className='border-t-2 w-6 bg-white' />
-          <span className='font-bold text-md lg:text-xl text-primary-200'>
-            Haryadi N.P.
-          </span>
-        </div>
+        <Logo />
         <ul className='hidden lg:flex gap-8'>
-          {navLinks.map((link) => (
-            <li key={link.id}>
-              <Link
-                href={link.path}
-                className='text-neutral-25 hover:underline hover:text-primary-200'
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          <NavLinks />
         </ul>
         <MobileMenu />
       </Container>
