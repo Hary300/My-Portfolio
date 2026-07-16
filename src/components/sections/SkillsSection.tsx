@@ -3,7 +3,6 @@ import Container from '../layouts/Container';
 import SectionTitle from '../common/SectionTitle';
 import { skillData } from '@/data/skillData';
 import Image from 'next/image';
-import diagonalLines from '@/assets/diagonal-lines.svg';
 import DiagonalLines from '../common/DiagonalLines';
 
 const SkillsSection = () => {
