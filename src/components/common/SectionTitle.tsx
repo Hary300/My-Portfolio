@@ -1,8 +1,9 @@
 import { cn } from '@/lib/utils';
+import { ReactNode } from 'react';
 
 interface SectionTitleProps {
   title: string;
-  subtitle: string;
+  subtitle: string | ReactNode;
   className?: string;
 }
 const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) => {

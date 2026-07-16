@@ -3,7 +3,7 @@ import SectionTitle from '../common/SectionTitle';
 import Container from '../layouts/Container';
 import { serviceData } from '@/data/serviceData';
 import Image from 'next/image';
-import monitorIcon from '@/assets/icons/Icon.svg';
+import monitorIcon from '@/assets/icons/monitor.svg';
 
 const ServiceSection = () => {
   const header = sectionTitles.service;
@@ -29,6 +29,7 @@ const ServiceSection = () => {
                 alt='monitor Icon'
                 width={26.67}
                 height={24}
+                className='w-6.5 h-auto'
               />
               <p className='font-semibold text-xl lg:text-display-sm lg:text-white'>
                 {item.title}

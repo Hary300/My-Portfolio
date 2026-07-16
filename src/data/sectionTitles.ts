@@ -21,7 +21,7 @@ export const sectionTitles: Record<SectionKey, SectionValue> = {
   },
   aboutMe: {
     title: 'ABOUT ME',
-    subtitle: 'HIGH-PERFORMANCE WEB EXPERIENCES',
+    subtitle: 'CRAFTING SEAMLESS HIGH-PERFORMANCE WEB EXPERIENCES',
   },
   skills: {
     title: 'SKILLS',
