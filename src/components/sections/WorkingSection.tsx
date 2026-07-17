@@ -3,19 +3,20 @@ import Container from '../layouts/Container';
 import SectionTitle from '../common/SectionTitle';
 import { workingData } from '@/data/workingData';
 import Image from 'next/image';
-import greenStarIcon from '@/assets/icons/greenStarIcon.svg';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const WorkingSection = () => {
   const header = sectionTitles.working;
   return (
     <section id='working'>
-      <Container className='flex flex-col gap-6 lg:gap-12 '>
+      <Container className='flex flex-col gap-6 lg:gap-12'>
         <SectionTitle
           title={header.title}
           subtitle={header.subtitle}
           className='text-center'
         />
-        <div className='flex flex-col lg:flex-row gap-6 lg:gap-20'>
+        <div className='flex flex-col md:flex-row gap-6 lg:gap-20'>
           {workingData.map((item) => {
             const isMe = item.isMe;
             return (
@@ -34,7 +35,7 @@ const WorkingSection = () => {
                   />
                 </div>
                 <div
-                  className={`w-full flex flex-col gap-6 lg:gap-8 divide-y ${isMe ? 'last:border-b lg:last:border-0' : ''}`}
+                  className={`w-full flex flex-col gap-6 lg:gap-8 divide-y ${isMe ? 'last:border-b md:last:border-0' : ''}`}
                 >
                   {item.reasons.map((reason, index) => (
                     <div
@@ -66,6 +67,9 @@ const WorkingSection = () => {
             );
           })}
         </div>
+        <Link href='#contact' className='sm:max-w-60 w-full lg:h-14 m-auto'>
+          <Button>HIRE ME</Button>
+        </Link>
       </Container>
     </section>
   );

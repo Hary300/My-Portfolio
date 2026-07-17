@@ -5,6 +5,7 @@ import DarkOverlay from '../common/DarkOverlay';
 import GreenOverlay from '../common/GreenOverlay';
 import { Star } from 'lucide-react';
 import ThreeGreenBoxes from '../common/ThreeGreenBoxes';
+import Link from 'next/link';
 
 const HeroSection = () => {
   return (
@@ -31,7 +32,9 @@ const HeroSection = () => {
               user-friendly web applications
             </p>
           </div>
-          <Button className='lg:max-w-75 lg:h-14'>HIRE ME</Button>
+          <Link href='#contact' className='lg:max-w-75 lg:h-14'>
+            <Button>HIRE ME</Button>
+          </Link>
           <div className='block lg:hidden absolute inset-y-0 inset-x-2 left-3/4 border-l -z-1' />
         </div>
         <div className='block lg:hidden absolute inset-y-0 inset-x-2 left-1/2 border-l -z-1' />
