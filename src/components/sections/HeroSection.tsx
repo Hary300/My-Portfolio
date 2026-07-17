@@ -51,7 +51,7 @@ const HeroSection = () => {
             className='object-center object-contain lg:object-cover grayscale brightness-50 '
           />
         </div>
-        <DarkOverlay />
+        <DarkOverlay rightOverlay={false} />
         <GreenOverlay />
         <div className='absolute left-1/2 -translate-x-1/2 bg-black border rounded-xl lg:rounded-3xl p-2xl flex flex-col gap-md bottom-10 lg:bottom-21 w-full max-w-87.25'>
           <p className='text-display-xs lg:text-display-xl font-bold'>5.0</p>
