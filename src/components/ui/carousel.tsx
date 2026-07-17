@@ -189,7 +189,7 @@ function CarouselPrevious({
       onClick={scrollPrev}
       {...props}
     >
-      <FaArrowLeft className='size-6 text-primary-200' />
+      <FaArrowLeft className='size-5 lg:size-6 text-primary-200' />
       <span className='sr-only'>Previous slide</span>
     </Button>
   );
@@ -213,7 +213,7 @@ function CarouselNext({
       onClick={scrollNext}
       {...props}
     >
-      <FaArrowRight className='size-6 text-primary-200' />
+      <FaArrowRight className='size-5 lg:size-6 text-primary-200' />
       <span className='sr-only'>Next slide</span>
     </Button>
   );

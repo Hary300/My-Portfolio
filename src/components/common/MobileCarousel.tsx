@@ -31,8 +31,8 @@ const MobileCarousel = ({ className }: MobileCarouselProps) => {
         ))}
       </CarouselContent>
       <div className='flex gap-4 justify-center'>
-        <CarouselPrevious className='size-14' />
-        <CarouselNext className='size-14' />
+        <CarouselPrevious className='size-12' />
+        <CarouselNext className='size-12' />
       </div>
     </Carousel>
   );
