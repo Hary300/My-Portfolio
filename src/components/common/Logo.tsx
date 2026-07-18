@@ -1,5 +1,5 @@
 interface LogoProps {
-  onClose: () => void;
+  onClose?: () => void;
 }
 const Logo = ({ onClose }: LogoProps) => {
   return (
