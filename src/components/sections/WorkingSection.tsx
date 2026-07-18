@@ -4,7 +4,6 @@ import SectionTitle from '../common/SectionTitle';
 import { workingData } from '@/data/workingData';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
 
 const WorkingSection = () => {
   const header = sectionTitles.working;
@@ -67,9 +66,9 @@ const WorkingSection = () => {
             );
           })}
         </div>
-        <Link href='#contact' className='sm:max-w-60 w-full lg:h-14 m-auto'>
+        <a href='#contact' className='sm:max-w-60 w-full lg:h-14 m-auto'>
           <Button>HIRE ME</Button>
-        </Link>
+        </a>
       </Container>
     </section>
   );

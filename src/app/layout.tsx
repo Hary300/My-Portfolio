@@ -27,7 +27,7 @@ export default function RootLayout({
         redHatDisplay.variable
       )}
     >
-      <body id='top'>
+      <body>
         <div className='max-w-360 m-auto w-full flex flex-col min-h-full'>
           {children}
         </div>

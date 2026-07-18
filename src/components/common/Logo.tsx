@@ -1,16 +1,14 @@
-import Link from 'next/link';
-
 const Logo = () => {
   return (
-    <Link
-      href='#top'
+    <a
+      href={'#home'}
       className='flex items-center gap-2.25 cursor-pointer group'
     >
       <div className='border-t-2 w-6 border-white' />
       <span className='font-bold text-md lg:text-xl text-primary-200 group-hover:underline'>
-        Haryadi N.P.
+        Hary300
       </span>
-    </Link>
+    </a>
   );
 };
 

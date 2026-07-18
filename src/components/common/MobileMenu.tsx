@@ -26,7 +26,7 @@ const MobileMenu = () => {
             <div className='flex items-center gap-2.25'>
               <div className='border-t-2 w-6 border-white' />
               <span className='font-bold text-md lg:text-xl text-primary-200'>
-                Haryadi N.P.
+                Hary300
               </span>
             </div>
           </SheetTitle>

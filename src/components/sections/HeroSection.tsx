@@ -5,12 +5,11 @@ import DarkOverlay from '../common/DarkOverlay';
 import GreenOverlay from '../common/GreenOverlay';
 import { Star } from 'lucide-react';
 import ThreeGreenBoxes from '../common/ThreeGreenBoxes';
-import Link from 'next/link';
 
 const HeroSection = () => {
   return (
     <section
-      id='hero'
+      id='home'
       className='relative flex flex-col lg:items-end lg:pl-30 lg:-mt-20 w-full border-b gap-3 lg:gap-0'
     >
       <div className='relative lg:absolute lg:left-30 lg:top-55.25 -mt-20 pt-20'>
@@ -19,7 +18,7 @@ const HeroSection = () => {
             <div className='flex gap-4 items-center'>
               <div className='border-t-2 border-neutral-25 w-5.25 lg:w-10 xl:w-28.5' />
               <p className='font-medium text-md lg:text-lg xl:text-xl'>
-                Hi, I am Haryadi N.P. Frontend Developer
+                Hi, I am Hary Frontend Developer
               </p>
             </div>
             <p className='font-extrabold text-display-lg lg:text-[55px] xl:text-[80px] lg:leading-7xl xl:leading-8xl'>
@@ -32,9 +31,9 @@ const HeroSection = () => {
               user-friendly web applications
             </p>
           </div>
-          <Link href='#contact' className='lg:max-w-75 lg:h-14'>
+          <a href='#contact' className='lg:max-w-75 lg:h-14'>
             <Button>HIRE ME</Button>
-          </Link>
+          </a>
           <div className='block lg:hidden absolute inset-y-0 inset-x-2 left-3/4 border-l -z-1' />
         </div>
         <div className='block lg:hidden absolute inset-y-0 inset-x-2 left-1/2 border-l -z-1' />

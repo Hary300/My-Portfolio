@@ -37,7 +37,7 @@ interface ProfileData {
 }
 
 export const profileData: ProfileData = {
-  name: 'Haryadi N.P',
+  name: 'Hary',
   isAvailable: true,
 };
 

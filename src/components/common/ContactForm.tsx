@@ -6,7 +6,7 @@ import InputField from './InputField';
 import { Button } from '../ui/button';
 import { Dialog } from '@/components/ui/dialog';
 import DialogCard from './DialogCard';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { formStatusData } from '@/data/contactData';
 
 const ContactForm = () => {
@@ -17,9 +17,9 @@ const ContactForm = () => {
     formState: { errors, isSubmitting },
   } = useForm<ContactSchema>({
     defaultValues: {
-      name: 'asas',
-      email: 'as@mail.com',
-      message: 'asdadasdasd',
+      name: '',
+      email: '',
+      message: '',
     },
     resolver: zodResolver(contactSchema),
   });
@@ -36,7 +36,7 @@ const ContactForm = () => {
       if (!isSuccess) {
         throw new Error('Something went wrong');
       }
-
+      console.log(data);
       setSuccess(true);
       reset();
     } catch (error) {

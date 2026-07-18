@@ -17,7 +17,7 @@ const DialogCard = ({ formStatus, setOpen }: DialogCardProps) => {
           alt={`${formStatus.status} icon`}
           width={132.68}
           height={102}
-          className='absolute left-[12.13px] top-[23.46px] lg:left-3.75 lg:top-7.25'
+          className='h-auto w-auto absolute left-[12.13px] top-[23.46px] lg:left-3.75 lg:top-7.25'
         />
       </div>
       <div className='flex flex-col justify-center'>

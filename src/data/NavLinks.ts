@@ -1,5 +1,5 @@
 export const navLinks = [
-  { id: 1, name: 'Home', path: '#top' },
+  { id: 1, name: 'Home', path: '#home' },
   { id: 2, name: 'About', path: '#about' },
   { id: 3, name: 'Skill', path: '#skills' },
   { id: 4, name: 'Projects', path: '#projects' },
