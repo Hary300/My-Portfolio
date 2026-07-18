@@ -14,13 +14,13 @@ const ContactSection = () => {
   return (
     <section id='contact' className='relative'>
       <Container className='flex flex-col lg:flex-row lg:justify-between'>
-        <div className='relative w-full lg:max-w-105 h-128.5 lg:h-160'>
+        <div className='relative w-full max-w-87.25 lg:max-w-105 h-128.5 lg:h-160 m-auto'>
           <Image
             src={personImage}
             alt='my image'
             fill
             sizes='(max-width: 1024px) 100vw, 420px'
-            className='object-cover grayscale brightness-55'
+            className='object-contain lg:object-cover grayscale brightness-55'
           />
           <DarkOverlay className='from-5%' />
           <div className='absolute bottom-[36.62px] lg:-bottom-8.75 left-1/2 -translate-x-1/2 flex flex-col gap-4 lg:gap-6 w-full max-w-[256px] items-center'>

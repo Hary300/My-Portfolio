@@ -6,7 +6,7 @@ import InputField from './InputField';
 import { Button } from '../ui/button';
 import { Dialog } from '@/components/ui/dialog';
 import DialogCard from './DialogCard';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { formStatusData } from '@/data/contactData';
 
 const ContactForm = () => {
@@ -25,15 +25,31 @@ const ContactForm = () => {
   });
 
   const [open, setOpen] = useState(false);
-  const [isSuccess] = useState(true);
+  const [isSuccess, setSuccess] = useState(false);
 
-  const onSubmit = (data: ContactSchema) => {
-    setOpen(true);
-    console.log(data);
-    reset();
+  const onSubmit = async (data: ContactSchema) => {
+    try {
+      const isSuccess =
+        (crypto.getRandomValues(new Uint8Array(1))[0] & 1) === 0;
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      if (!isSuccess) {
+        throw new Error('Something went wrong');
+      }
+
+      setSuccess(true);
+      reset();
+    } catch (error) {
+      if (error instanceof Error) {
+        console.log(error.message);
+        setSuccess(false);
+      }
+    } finally {
+      setOpen(true);
+    }
   };
   return (
-    <Dialog open={open} onOpenChange={setOpen}>
+    <>
       <form
         onSubmit={handleSubmit(onSubmit)}
         className='flex flex-col gap-4 lg:gap-6 pb-7 '
@@ -60,13 +76,15 @@ const ContactForm = () => {
         <Button disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
+      </form>
 
+      <Dialog open={open} onOpenChange={setOpen}>
         <DialogCard
           formStatus={isSuccess ? formStatusData.success : formStatusData.error}
           setOpen={() => setOpen(false)}
         />
-      </form>
-    </Dialog>
+      </Dialog>
+    </>
   );
 };
 
