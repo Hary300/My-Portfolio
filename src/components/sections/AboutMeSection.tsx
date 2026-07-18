@@ -8,7 +8,7 @@ import aboutMeImage3 from '@/assets/images/aboutMeImage3.png';
 import Image from 'next/image';
 import ThreeGreenBoxes from '../common/ThreeGreenBoxes';
 import { motion } from 'motion/react';
-import { fadeUp, scaleIn, staggerContainer } from '@/motion/motion';
+import { fadeUp, scaleIn } from '@/motion/motion';
 
 const AboutMeSection = () => {
   const header = sectionTitles.aboutMe;

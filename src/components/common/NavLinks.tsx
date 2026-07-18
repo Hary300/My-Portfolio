@@ -1,4 +1,4 @@
-import { navLinks } from '@/data/navLinks';
+import { navLinks } from '@/data/temp';
 
 const NavLinks = ({ onClick }: { onClick?: () => void }) => {
   return navLinks.map((link) => (

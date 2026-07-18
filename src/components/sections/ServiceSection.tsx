@@ -6,12 +6,7 @@ import { serviceData } from '@/data/serviceData';
 import Image from 'next/image';
 import monitorIcon from '@/assets/icons/monitor.svg';
 import { motion } from 'motion/react';
-import {
-  dividerHorizontal,
-  fadeUp,
-  slideRight,
-  staggerContainer,
-} from '@/motion/motion';
+import { fadeUp, slideRight, staggerContainer } from '@/motion/motion';
 
 const ServiceSection = () => {
   const header = sectionTitles.service;
