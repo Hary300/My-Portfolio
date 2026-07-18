@@ -1,9 +1,12 @@
+'use client';
 import { sectionTitles } from '@/data/sectionTitles';
 import Container from '../layouts/Container';
 import SectionTitle from '../common/SectionTitle';
 import { skillData } from '@/data/skillData';
 import Image from 'next/image';
 import DiagonalLines from '../common/DiagonalLines';
+import { motion } from 'motion/react';
+import { dividerHorizontal, fadeUp, staggerContainer } from '@/motion/motion';
 
 const SkillsSection = () => {
   const header = sectionTitles.skills;
@@ -16,9 +19,19 @@ const SkillsSection = () => {
             subtitle={header.subtitle}
             className='lg:max-w-131 lg:leading-6xl'
           />
-          <div className='grid grid-cols-4 gap-6 w-fit'>
+          <motion.div
+            variants={staggerContainer}
+            initial='hidden'
+            whileInView='visible'
+            viewport={{
+              once: true,
+              amount: 0.2,
+            }}
+            className='grid grid-cols-4 gap-6 w-fit'
+          >
             {skillData.map((item) => (
-              <div
+              <motion.div
+                variants={fadeUp}
                 key={item.id}
                 className='flex justify-center items-center rounded-full aspect-square shrink-0 border size-12 lg:size-16'
               >
@@ -27,9 +40,9 @@ const SkillsSection = () => {
                   alt={`${item.name} icon`}
                   width={item.width}
                 />
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
         <div className='flex flex-col gap-4 lg:gap-6 lg:max-w-150.5 w-full'>
           {skillData.map((item) => (
@@ -40,7 +53,18 @@ const SkillsSection = () => {
               <div className='relative w-full'>
                 <div className='absolute top-1/2 border-b w-full -z-1' />
 
-                <div
+                <motion.div
+                  variants={dividerHorizontal}
+                  initial='hidden'
+                  whileInView='visible'
+                  transition={{
+                    duration: 1,
+                    delay: 0.3,
+                  }}
+                  viewport={{
+                    once: true,
+                    amount: 0.2,
+                  }}
                   className='relative px-[15.52px] py-[6px] lg:py-4 lg:px-6 rounded-xl bg-primary-300 h-[41.4px] flex items-center overflow-hidden'
                   style={{ width: item.percent }}
                 >
@@ -48,7 +72,7 @@ const SkillsSection = () => {
                     {item.name}
                   </p>
                   <DiagonalLines />
-                </div>
+                </motion.div>
               </div>
               <p className='font-semibold text-sm text-white lg:text-xl'>
                 {item.percent}

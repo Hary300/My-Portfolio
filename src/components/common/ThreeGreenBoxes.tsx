@@ -1,4 +1,7 @@
+'use client';
 import { cn } from '@/lib/utils';
+import { fadeIn, fadeUp } from '@/motion/motion';
+import { motion } from 'motion/react';
 
 interface ThreeGreenBoxesProps {
   className?: string;
@@ -11,16 +14,26 @@ const ThreeGreenBoxes = ({
 }: ThreeGreenBoxesProps) => {
   if (orientation === 'vertical')
     return (
-      <div className={cn('absolute h-[103.5px] lg:h-34.5 flex', className)}>
+      <motion.div
+        variants={fadeUp}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true }}
+        className={cn('absolute h-[103.5px] lg:h-34.5 flex', className)}
+      >
         <div className='flex flex-col justify-between'>
           <div className='size-[34.5px] lg:size-11.5  bg-primary-400' />
           <div className='size-[34.5px] lg:size-11.5  bg-primary-400' />
         </div>
         <div className='size-[34.5px] lg:size-11.5 bg-primary-400 m-auto' />
-      </div>
+      </motion.div>
     );
   return (
-    <div
+    <motion.div
+      variants={fadeUp}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true }}
       className={cn(
         'absolute w-[103.5px] lg:w-34.5 flex flex-col items-center',
         className
@@ -31,7 +44,7 @@ const ThreeGreenBoxes = ({
         <div className='size-[34.5px] lg:size-11.5  bg-primary-400' />
         <div className='size-[34.5px] lg:size-11.5  bg-primary-400' />
       </div>
-    </div>
+    </motion.div>
   );
 };
 

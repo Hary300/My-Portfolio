@@ -1,6 +1,9 @@
+'use client';
 import { ExperienceData } from '@/data/experienceData';
 import ExperienceCard from './ExperienceCard';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
+import { dividerVertical, fadeUp } from '@/motion/motion';
 
 interface ExperienceItemProps {
   item: ExperienceData;
@@ -28,10 +31,21 @@ const ExperienceItem = ({
       />
 
       <div className='relative flex justify-center items-center h-full col-start-1 lg:col-start-2 row-start-1 w-fit'>
-        <div className='size-10 rounded-full aspect-square shrink-0 border flex justify-center items-center bg-black'>
+        <motion.div
+          variants={fadeUp}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='size-10 rounded-full aspect-square shrink-0 border flex justify-center items-center bg-black'
+        >
           {item.id}
-        </div>
-        <div
+        </motion.div>
+        <motion.div
+          variants={dividerVertical}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 2 }}
           className={cn(
             'absolute border-l h-[calc(100%+1rem)] -z-1',
             isFirst && 'top-1/2',

@@ -1,7 +1,10 @@
+'use client';
 import { TestimonialData } from '@/data/testimonialData';
 import { cn } from '@/lib/utils';
 import { Star } from 'lucide-react';
 import Image from 'next/image';
+import { motion } from 'motion/react';
+import { fadeUp } from '@/motion/motion';
 
 interface TestimonialCardProps {
   item: TestimonialData;
@@ -10,7 +13,11 @@ interface TestimonialCardProps {
 
 const TestimonialCard = ({ item, className }: TestimonialCardProps) => {
   return (
-    <div
+    <motion.div
+      variants={fadeUp}
+      initial='hidden'
+      whileInView='visible'
+      viewport={{ once: true, amount: 0.2 }}
       className={cn('border rounded-2xl p-4 flex flex-col gap-4', className)}
     >
       <div className='flex flex-row gap-1 justify-between items-center'>
@@ -37,7 +44,7 @@ const TestimonialCard = ({ item, className }: TestimonialCardProps) => {
         ))}
       </div>
       <p className='text-neutral-400 text-sm lg:text-md'>{item.quote}</p>
-    </div>
+    </motion.div>
   );
 };
 

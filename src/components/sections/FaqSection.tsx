@@ -1,3 +1,4 @@
+'use client';
 import { sectionTitles } from '@/data/sectionTitles';
 import Container from '../layouts/Container';
 import SectionTitle from '../common/SectionTitle';
@@ -5,6 +6,8 @@ import { faqData } from '@/data/faqData';
 import Image from 'next/image';
 import greenStarIcon from '@/assets/icons/greenStarIcon.svg';
 import { cn } from '@/lib/utils';
+import { motion } from 'motion/react';
+import { dividerHorizontal, fadeUp } from '@/motion/motion';
 
 const FaqSection = () => {
   const header = sectionTitles.faq;
@@ -19,7 +22,11 @@ const FaqSection = () => {
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-0 lg:gap-y-5 '>
           {faqData.map((item, index) => (
             <div key={item.id} className='lg:flex lg:flex-col lg:gap-5'>
-              <div
+              <motion.div
+                variants={fadeUp}
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.2 }}
                 key={item.id}
                 className={cn(
                   'flex flex-col gap-2 lg:gap-6 border lg:border-0 rounded-2xl lg:rounded-none p-4 lg:px-10',
@@ -41,10 +48,14 @@ const FaqSection = () => {
                 <p className='text-md font-medium text-neutral-400'>
                   {item.answer}
                 </p>
-              </div>
-              <div
+              </motion.div>
+              <motion.div
+                variants={dividerHorizontal}
+                initial='hidden'
+                whileInView='visible'
+                viewport={{ once: true, amount: 0.2 }}
                 className={cn(
-                  'hidden lg:block border-b ',
+                  'hidden lg:block border-b',
                   index === faqData.length - 1 && 'lg:hidden',
                   index === faqData.length - 2 && 'lg:hidden'
                 )}

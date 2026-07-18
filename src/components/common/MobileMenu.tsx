@@ -10,6 +10,7 @@ import { Button } from '@/components/ui/button';
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import { useState } from 'react';
 import NavLinks from './NavLinks';
+import Logo from './Logo';
 
 const MobileMenu = () => {
   const [open, setOpen] = useState(false);
@@ -23,12 +24,7 @@ const MobileMenu = () => {
       <SheetContent>
         <SheetHeader className='h-20 flex justify-center border-b'>
           <SheetTitle>
-            <div className='flex items-center gap-2.25'>
-              <div className='border-t-2 w-6 border-white' />
-              <span className='font-bold text-md lg:text-xl text-primary-200'>
-                Hary300
-              </span>
-            </div>
+            <Logo onClose={() => setOpen(false)} />
           </SheetTitle>
         </SheetHeader>
         <div className='grid flex-1 auto-rows-min gap-6 px-4'>

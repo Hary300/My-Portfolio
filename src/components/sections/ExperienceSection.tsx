@@ -29,7 +29,7 @@ const ExperienceSection = () => {
       </Container>
       <ThreeGreenBoxes
         orientation='vertical'
-        className='right-0 bottom-0 rotate-180'
+        className='right-0 bottom-[-81.88px] lg:bottom-0 rotate-180'
       />
     </section>
   );

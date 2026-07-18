@@ -1,3 +1,4 @@
+'use client';
 import { sectionTitles } from '@/data/sectionTitles';
 import Container from '../layouts/Container';
 import SectionTitle from '../common/SectionTitle';
@@ -10,6 +11,9 @@ import { cn } from '@/lib/utils';
 import ContactForm from '../common/ContactForm';
 
 const ContactSection = () => {
+  const handleSocialMedClick = (url: string) => {
+    window.open(url, '_blank');
+  };
   const header = sectionTitles.contact;
   return (
     <section id='contact' className='relative -scroll-mt-80 lg:scroll-mt-0'>
@@ -28,7 +32,8 @@ const ContactSection = () => {
               {socialLinks.map((item) => (
                 <div
                   key={item.id}
-                  className='relative size-12 lg:size-16 aspect-square shrink-0 border cursor-pointer flex justify-center items-center rounded-full bg-black '
+                  className='relative size-12 lg:size-16 aspect-square shrink-0 border cursor-pointer flex justify-center items-center rounded-full bg-black'
+                  onClick={() => handleSocialMedClick(item.href)}
                 >
                   <item.icon className='size-7 lg:size-9' />
                 </div>

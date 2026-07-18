@@ -8,6 +8,8 @@ import { Dialog } from '@/components/ui/dialog';
 import DialogCard from './DialogCard';
 import { useState } from 'react';
 import { formStatusData } from '@/data/contactData';
+import { motion } from 'motion/react';
+import { fadeUp } from '@/motion/motion';
 
 const ContactForm = () => {
   const {
@@ -50,7 +52,11 @@ const ContactForm = () => {
   };
   return (
     <>
-      <form
+      <motion.form
+        variants={fadeUp}
+        initial='hidden'
+        whileInView='visible'
+        viewport={{ once: true, amount: 0.2 }}
         onSubmit={handleSubmit(onSubmit)}
         className='flex flex-col gap-4 lg:gap-6 pb-7 '
       >
@@ -76,7 +82,7 @@ const ContactForm = () => {
         <Button disabled={isSubmitting}>
           {isSubmitting ? 'Sending...' : 'Send Message'}
         </Button>
-      </form>
+      </motion.form>
 
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogCard

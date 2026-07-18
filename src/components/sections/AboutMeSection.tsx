@@ -1,3 +1,4 @@
+'use client';
 import { sectionTitles } from '@/data/sectionTitles';
 import SectionTitle from '../common/SectionTitle';
 import Container from '../layouts/Container';
@@ -6,6 +7,8 @@ import aboutMeImage2 from '@/assets/images/aboutMeImage2.png';
 import aboutMeImage3 from '@/assets/images/aboutMeImage3.png';
 import Image from 'next/image';
 import ThreeGreenBoxes from '../common/ThreeGreenBoxes';
+import { motion } from 'motion/react';
+import { fadeUp, scaleIn, staggerContainer } from '@/motion/motion';
 
 const AboutMeSection = () => {
   const header = sectionTitles.aboutMe;
@@ -27,12 +30,24 @@ const AboutMeSection = () => {
           }
           className='text-center gap-4 lg:max-w-218 m-auto'
         />
-        <p className='font-medium text-md text-neutral-400 lg:text-xl text-center max-w-249 m-auto'>
+        <motion.p
+          variants={fadeUp}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='font-medium text-md text-neutral-400 lg:text-xl text-center max-w-249 m-auto'
+        >
           I love turning designs into interactive, high-performance websites.
           With a keen eye for detail and a deep understanding of frontend
           technologies, I create smooth and visually appealing user experiences.
-        </p>
-        <div className='relative -mx-4 mt-6 md:mt-0 -mb-10 md:mb-0 md:mx-0 h-72 md:absolute md:h-auto md:inset-0'>
+        </motion.p>
+        <motion.div
+          variants={scaleIn}
+          initial='hidden'
+          whileInView='visible'
+          viewport={{ once: true, amount: 0.2 }}
+          className='relative -mx-4 mt-6 md:mt-0 -mb-10 md:mb-0 md:mx-0 h-72 md:absolute md:h-auto md:inset-0'
+        >
           <Image
             src={aboutMeImage1}
             alt='project 1'
@@ -56,7 +71,7 @@ const AboutMeSection = () => {
           />
 
           <ThreeGreenBoxes orientation='vertical' className='left-0 bottom-0' />
-        </div>
+        </motion.div>
       </Container>
     </section>
   );
