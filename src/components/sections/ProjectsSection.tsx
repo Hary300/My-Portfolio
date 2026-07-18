@@ -7,7 +7,7 @@ import Image from 'next/image';
 const ProjectsSection = () => {
   const header = sectionTitles.project;
   return (
-    <section id='projects'>
+    <section id='projects' className='scroll-mt-20 lg:scroll-mt-0'>
       <Container className='flex flex-col gap-6 lg:gap-16'>
         <SectionTitle
           title={header.title}

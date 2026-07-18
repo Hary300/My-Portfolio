@@ -10,7 +10,7 @@ const HeroSection = () => {
   return (
     <section
       id='home'
-      className='relative flex flex-col lg:items-end lg:pl-30 lg:-mt-20 w-full border-b gap-3 lg:gap-0'
+      className='relative flex flex-col lg:items-end lg:pl-30 lg:-mt-20 w-full border-b gap-3 lg:gap-0 scroll-mt-20 lg:scroll-mt-0'
     >
       <div className='relative lg:absolute lg:left-30 lg:top-55.25 -mt-20 pt-20'>
         <div className='relative  flex flex-col gap-10 lg:gap-15 py-10 lg:px-0 lg:py-0 lg:max-w-201.75 z-1 px-4 lg:pr-0'>

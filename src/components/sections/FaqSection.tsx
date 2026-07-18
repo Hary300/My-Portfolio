@@ -9,7 +9,7 @@ import { cn } from '@/lib/utils';
 const FaqSection = () => {
   const header = sectionTitles.faq;
   return (
-    <section id='faq'>
+    <section id='faq' className='scroll-mt-20 lg:scroll-mt-0'>
       <Container className='flex flex-col gap-6 lg:gap-16'>
         <SectionTitle
           title={header.title}

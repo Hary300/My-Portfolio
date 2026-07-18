@@ -12,8 +12,8 @@ import ContactForm from '../common/ContactForm';
 const ContactSection = () => {
   const header = sectionTitles.contact;
   return (
-    <section id='contact' className='relative'>
-      <Container className='flex flex-col lg:flex-row lg:justify-between'>
+    <section id='contact' className='relative -scroll-mt-80 lg:scroll-mt-0'>
+      <Container className='flex flex-col lg:flex-row lg:justify-between lg:gap-16'>
         <div className='relative w-full max-w-87.25 lg:max-w-105 h-128.5 lg:h-160 m-auto'>
           <Image
             src={personImage}

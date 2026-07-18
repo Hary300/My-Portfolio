@@ -8,7 +8,7 @@ import DiagonalLines from '../common/DiagonalLines';
 const SkillsSection = () => {
   const header = sectionTitles.skills;
   return (
-    <section id='skills'>
+    <section id='skills' className='scroll-mt-20 lg:scroll-mt-0'>
       <Container className='flex flex-col lg:flex-row gap-10 lg:gap-14.5'>
         <div className='flex flex-col gap-6 lg:gap-10'>
           <SectionTitle

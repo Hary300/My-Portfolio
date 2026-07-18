@@ -11,10 +11,10 @@ const AboutMeSection = () => {
   const header = sectionTitles.aboutMe;
 
   return (
-    <section id='about'>
+    <section id='about' className='scroll-mt-20 lg:scroll-mt-0'>
       <Container
         desktopPaddingY='lg'
-        className='relative flex flex-col gap-4 lg:gap-16 '
+        className='relative flex flex-col gap-4 lg:gap-16'
       >
         <SectionTitle
           title={header.title}
@@ -32,7 +32,7 @@ const AboutMeSection = () => {
           With a keen eye for detail and a deep understanding of frontend
           technologies, I create smooth and visually appealing user experiences.
         </p>
-        <div className='relative -mx-4 mt-6 lg:mt-0 -mb-10 lg:mb-0 lg:mx-0 h-72 lg:absolute lg:h-auto lg:inset-0'>
+        <div className='relative -mx-4 mt-6 md:mt-0 -mb-10 md:mb-0 md:mx-0 h-72 md:absolute md:h-auto md:inset-0'>
           <Image
             src={aboutMeImage1}
             alt='project 1'
