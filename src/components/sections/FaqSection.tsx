@@ -39,7 +39,7 @@ const FaqSection = () => {
                     alt='green star icon'
                     width={24}
                     height={24}
-                    className='w-6 h-6 lg:w-8 lg:h-8'
+                    className='w-6 h-auto lg:w-8'
                   />
                   <p className='font-bold text-lg lg:text-display-xs'>
                     {item.question}
